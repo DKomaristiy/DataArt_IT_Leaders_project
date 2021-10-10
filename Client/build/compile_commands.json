@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/dmitriy/DataArt_It_Lead/Client/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-11  -DBOOST_ERROR_CODE_HEADER_ONLY  -g   -o CMakeFiles/client.dir/main.cpp.o -c /home/dmitriy/DataArt_It_Lead/Client/main.cpp",
+  "file": "/home/dmitriy/DataArt_It_Lead/Client/main.cpp"
+}
+]
