@@ -23,8 +23,7 @@ find_package(Boost 1.65.1 REQUIRED COMPONENTS system filesystem)
 include_directories( ${Boost_INCLUDE_DIRS})
 link_directories( ${Boost_LIBRARY_DIRS})
 
-include(CTest)
-enable_testing()
+
 
 add_executable(PrjServer main.cpp)
 

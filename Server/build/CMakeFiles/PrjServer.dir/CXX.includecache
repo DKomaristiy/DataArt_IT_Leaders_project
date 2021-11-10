@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dmitriy/DataArt_It_Lead/Projects/Server/main.cpp
+boost/bind.hpp
+-
+boost/asio.hpp
+-
+boost/shared_ptr.hpp
+-
+boost/enable_shared_from_this.hpp
+-
+iostream
+-
+

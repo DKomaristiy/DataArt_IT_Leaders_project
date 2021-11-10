@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/dmitriy/DataArt_It_Lead/Projects/RestClient/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-11  -DCPPREST_FORCE_HTTP_CLIENT_ASIO -DCPPREST_FORCE_HTTP_LISTENER_ASIO -DCPPREST_NO_SSL_LEAK_SUPPRESS  -g   -o CMakeFiles/RestClient.dir/main.cpp.o -c /home/dmitriy/DataArt_It_Lead/Projects/RestClient/main.cpp",
+  "file": "/home/dmitriy/DataArt_It_Lead/Projects/RestClient/main.cpp"
+}
+]

@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/dmitriy/DataArt_It_Lead/Server/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-11  -DBOOST_ERROR_CODE_HEADER_ONLY -I/home/dmitriy/DataArt_It_Lead/Server/../shared/boost_1_65_1/boost  -g   -o CMakeFiles/PrjServer.dir/main.cpp.o -c /home/dmitriy/DataArt_It_Lead/Server/main.cpp",
-  "file": "/home/dmitriy/DataArt_It_Lead/Server/main.cpp"
+  "directory": "/home/dmitriy/DataArt_It_Lead/Projects/Server/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-11  -DBOOST_ERROR_CODE_HEADER_ONLY -I/home/dmitriy/DataArt_It_Lead/Projects/Server/../shared/boost_1_65_1/boost  -g   -o CMakeFiles/PrjServer.dir/main.cpp.o -c /home/dmitriy/DataArt_It_Lead/Projects/Server/main.cpp",
+  "file": "/home/dmitriy/DataArt_It_Lead/Projects/Server/main.cpp"
 }
 ]

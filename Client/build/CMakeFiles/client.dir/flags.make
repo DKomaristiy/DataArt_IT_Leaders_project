@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/x86_64-linux-gnu-g++-11
 CXX_FLAGS = -g  
 
-CXX_DEFINES = -DBOOST_ERROR_CODE_HEADER_ONLY
+CXX_DEFINES = 
 
 CXX_INCLUDES = 
 

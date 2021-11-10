@@ -6,7 +6,7 @@ msgFromClient       = "Hello From Python UDP Server"
 
 bytesToSend         = str.encode(msgFromClient)
 
-serverAddressPort   = ("127.0.0.1", 8005)
+serverAddressPort   = ("127.0.0.1", 2424)
 
 bufferSize          = 1024
 

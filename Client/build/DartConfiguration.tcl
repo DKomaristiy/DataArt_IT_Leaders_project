@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/dmitriy/DataArt_It_Lead/Client
-BuildDirectory: /home/dmitriy/DataArt_It_Lead/Client/build
+SourceDirectory: /home/dmitriy/DataArt_It_Lead/Projects/Client
+BuildDirectory: /home/dmitriy/DataArt_It_Lead/Projects/Client/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -36,7 +36,7 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/dmitriy/DataArt_It_Lead/Client"
+ConfigureCommand: "/usr/bin/cmake" "/home/dmitriy/DataArt_It_Lead/Projects/Client"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 

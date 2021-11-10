@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dmitriy/DataArt_It_Lead/Server
+CMAKE_SOURCE_DIR = /home/dmitriy/DataArt_It_Lead/Projects/Server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dmitriy/DataArt_It_Lead/Server/build
+CMAKE_BINARY_DIR = /home/dmitriy/DataArt_It_Lead/Projects/Server/build
 
 # Utility rule file for ExperimentalSubmit.
 
@@ -71,6 +71,6 @@ CMakeFiles/ExperimentalSubmit.dir/clean:
 .PHONY : CMakeFiles/ExperimentalSubmit.dir/clean
 
 CMakeFiles/ExperimentalSubmit.dir/depend:
-	cd /home/dmitriy/DataArt_It_Lead/Server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dmitriy/DataArt_It_Lead/Server /home/dmitriy/DataArt_It_Lead/Server /home/dmitriy/DataArt_It_Lead/Server/build /home/dmitriy/DataArt_It_Lead/Server/build /home/dmitriy/DataArt_It_Lead/Server/build/CMakeFiles/ExperimentalSubmit.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dmitriy/DataArt_It_Lead/Projects/Server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dmitriy/DataArt_It_Lead/Projects/Server /home/dmitriy/DataArt_It_Lead/Projects/Server /home/dmitriy/DataArt_It_Lead/Projects/Server/build /home/dmitriy/DataArt_It_Lead/Projects/Server/build /home/dmitriy/DataArt_It_Lead/Projects/Server/build/CMakeFiles/ExperimentalSubmit.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ExperimentalSubmit.dir/depend
 

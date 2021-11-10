@@ -1,0 +1,5 @@
+/home/dmitriy/DataArt_It_Lead/Projects/RestSer/build/CMakeFiles/edit_cache.dir
+/home/dmitriy/DataArt_It_Lead/Projects/RestSer/build/CMakeFiles/package_source.dir
+/home/dmitriy/DataArt_It_Lead/Projects/RestSer/build/CMakeFiles/rebuild_cache.dir
+/home/dmitriy/DataArt_It_Lead/Projects/RestSer/build/CMakeFiles/package.dir
+/home/dmitriy/DataArt_It_Lead/Projects/RestSer/build/CMakeFiles/RestServ.dir

@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = -DBOOST_ERROR_CODE_HEADER_ONLY
 
-CXX_INCLUDES = -I/home/dmitriy/DataArt_It_Lead/Server/../shared/boost_1_65_1/boost 
+CXX_INCLUDES = -I/home/dmitriy/DataArt_It_Lead/Projects/Server/../shared/boost_1_65_1/boost 
 
