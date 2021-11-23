@@ -1,5 +1,8 @@
 #include "R_server.h"
 #include <csignal>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
+namespace bpt = boost::property_tree;
 
 RServer *serversig;
 
@@ -20,15 +23,20 @@ void thread_start_server( RServer *server)
 {
    server->startServer();
 }
-void fork_create_server(string url, vector <string> &TableUrl, uint32_t cnt, uint32_t number)
+void fork_create_server(string url, vector <string> &TableUrl, uint32_t cnt)
 {
    RServer server(url);
    serversig = &server;  
    signal(SIGINT, signalHandler);  
- 
-   sleep(5 * number);
-   
+
+   std::ifstream ifs{"../in.json"};
+   bpt::ptree pt;
+   bpt::read_json(ifs, pt);      
+   int valSleep = pt.get<int>("Port.Sleep_"+url,2);
+   sleep(valSleep);
+
    std::thread tser(thread_start_server, &server); 
+   
 
    auto putvalue = json::value::object();
    putvalue["fork"] = json::value(getpid());
@@ -58,6 +66,7 @@ int main()
 
    pid_t  ser[cnt];
 
+
    
    for (int i = cnt ; i >= 0; i--)
    {
@@ -70,23 +79,28 @@ int main()
       case 0:
          if (i != 0)
          {
-            fork_create_server(TableUrl[i],TableUrl,cnt, i);
+            fork_create_server(TableUrl[i],TableUrl,cnt);
          }
          break;
       default:
          if (i == 0)
-         {    
-            RServer server(TableUrl[i]);  
-            serversig = &server;   
-            signal(SIGINT, signalHandler);  
-            std::thread tser(thread_start_server, &server);          
-          
+         {
+            RServer server(TableUrl[i]);
+            serversig = &server;
+            signal(SIGINT, signalHandler);
+            std::ifstream ifs{"../in.json"};
+            bpt::ptree pt;
+            bpt::read_json(ifs, pt);
+            int valSleep = pt.get<int>("Port.Sleep_" + TableUrl[i], 2);
+            sleep(valSleep);
+
+            std::thread tser(thread_start_server, &server);
+
             auto putvalue = json::value::object();
-           /* putvalue["one"] = json::value(455);
+            /* putvalue["one"] = json::value(455);
             putvalue["two"] = json::value(222);
             putvalue["three"] = json::value(333);
             server.change_data(putvalue, TableUrl, cnt);*/
-            
 
             putvalue["Street"] = json::value(12);
             putvalue["home"] = json::value(15);

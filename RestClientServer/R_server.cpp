@@ -276,12 +276,6 @@ void RServer::stopServer()
    m_listener.close().wait();
 }
 vector <http_client> client_http;
-json::value jvaltemp[5];
-void thread_request(method mtd, uint32_t num)
-{
-  make_request(client_http[num], methods::PUT, jvaltemp[num]);
-
-}
 
 void RServer::change_data(json::value jval, vector<string> &TableUrl, uint32_t cnt)
 {
@@ -315,9 +309,7 @@ void RServer::change_data(json::value jval, vector<string> &TableUrl, uint32_t c
       for (int i = cnt; i >= 0; i--)
       {
          if (m_listener.uri().to_string() != TableUrl[i])
-         {
-            jvaltemp[i] = jval;
-           // std::thread th = std::thread(thread_request, methods::PUT,i);
+         {                      
             std::thread th = std::thread(make_request,std::ref(client_http[i]), methods::PUT,std::ref(jval));
             t.push_back(std::move(th));
 
@@ -332,12 +324,3 @@ void RServer::change_data(json::value jval, vector<string> &TableUrl, uint32_t c
 
    }
 }
-
-  /*
-  if (cnt > 0 && (Fl_client_created))
-   {
-      for (int i = cnt; i >= 0; i--)
-      {
-         make_request(client_http[i], methods::PUT, jval);
-      }
-   }*/

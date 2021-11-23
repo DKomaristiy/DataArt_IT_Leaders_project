@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__CliServ
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake -H/home/dmitriy/DataArt_It_Lead/restserverfork -B/home/dmitriy/DataArt_It_Lead/restserverfork/build
+  command = /usr/bin/cmake -H/home/dmitriy/DataArt_It_Lead/Gitprj/DataArt_IT_Leaders_project/RestClientServer -B/home/dmitriy/DataArt_It_Lead/Gitprj/DataArt_IT_Leaders_project/RestClientServer/build
   description = Re-running CMake...
   generator = 1
 
