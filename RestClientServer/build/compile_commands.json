@@ -1,0 +1,13 @@
+[
+{
+  "directory": "/home/dmitriy/DataArt_It_Lead/restserverfork/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-11  -DCPPREST_FORCE_HTTP_CLIENT_ASIO -DCPPREST_FORCE_HTTP_LISTENER_ASIO -DCPPREST_NO_SSL_LEAK_SUPPRESS  -g   -o CMakeFiles/CliServ.dir/main.cpp.o -c /home/dmitriy/DataArt_It_Lead/restserverfork/main.cpp",
+  "file": "/home/dmitriy/DataArt_It_Lead/restserverfork/main.cpp"
+},
+
+{
+  "directory": "/home/dmitriy/DataArt_It_Lead/restserverfork/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-11  -DCPPREST_FORCE_HTTP_CLIENT_ASIO -DCPPREST_FORCE_HTTP_LISTENER_ASIO -DCPPREST_NO_SSL_LEAK_SUPPRESS  -g   -o CMakeFiles/CliServ.dir/R_server.cpp.o -c /home/dmitriy/DataArt_It_Lead/restserverfork/R_server.cpp",
+  "file": "/home/dmitriy/DataArt_It_Lead/restserverfork/R_server.cpp"
+}
+]
