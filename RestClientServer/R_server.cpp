@@ -1,7 +1,7 @@
 
 #include "R_server.h"
 #include <cpprest/http_client.h>
-#include <ctime>
+#include <sys/time.h>
 
 using namespace web::http::client;
 
@@ -12,14 +12,19 @@ pplx::task<http_response> make_task_request(http_client &client, method mtd, jso
 
 void make_request(http_client &client, method mtd, json::value const &jvalue)
 {
-  // auto time = client.client_config().timeout();
- //  std::cout << "time=" << time.count() << endl;
-   uint32_t temp_time = 0;
-   uint32_t start_time = clock() / CLOCKS_PER_SEC;
+   struct timeval tBegin, tEnd;
+   gettimeofday(&tBegin, NULL);
+   gettimeofday(&tEnd, NULL);
+   auto timebegin = tBegin.tv_sec;
+   auto timeend = tEnd.tv_sec;
    uint32_t status = 0;
-   while (status != status_codes::OK && (temp_time - start_time < 20))
+   int timeout;
+
+   while (status != status_codes::OK && (timeout < 25))
    {
-      temp_time = clock() / CLOCKS_PER_SEC;
+      gettimeofday(&tEnd, NULL);
+      timeend = tEnd.tv_sec;
+      timeout = timeend - timebegin;
       try
       {
          sleep(1);
@@ -43,7 +48,6 @@ void make_request(http_client &client, method mtd, json::value const &jvalue)
       }
    }
 }
-
 
 map<utility::string_t, int> TableOfNumber;
 

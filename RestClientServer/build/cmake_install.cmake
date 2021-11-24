@@ -1,4 +1,4 @@
-# Install script for directory: /home/dmitriy/DataArt_It_Lead/Gitprj/DataArt_IT_Leaders_project/RestClientServer
+# Install script for directory: /home/dmitriy/DataArt_It_Lead/gitProjects/DataArt_IT_Leaders_project/RestClientServer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dmitriy/DataArt_It_Lead/Gitprj/DataArt_IT_Leaders_project/RestClientServer/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dmitriy/DataArt_It_Lead/gitProjects/DataArt_IT_Leaders_project/RestClientServer/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
