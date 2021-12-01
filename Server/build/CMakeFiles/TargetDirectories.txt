@@ -1,5 +1,0 @@
-/home/dmitriy/DataArt_It_Lead/Projects/Server/build/CMakeFiles/edit_cache.dir
-/home/dmitriy/DataArt_It_Lead/Projects/Server/build/CMakeFiles/package_source.dir
-/home/dmitriy/DataArt_It_Lead/Projects/Server/build/CMakeFiles/rebuild_cache.dir
-/home/dmitriy/DataArt_It_Lead/Projects/Server/build/CMakeFiles/package.dir
-/home/dmitriy/DataArt_It_Lead/Projects/Server/build/CMakeFiles/PrjServer.dir

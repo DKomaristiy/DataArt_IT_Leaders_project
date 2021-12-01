@@ -1,1 +1,0 @@
-/usr/bin/x86_64-linux-gnu-g++-11  -g   CMakeFiles/client.dir/main.cpp.o  -o client /usr/lib/x86_64-linux-gnu/libboost_thread.so /usr/lib/x86_64-linux-gnu/libboost_system.so /usr/lib/x86_64-linux-gnu/libboost_filesystem.so /usr/lib/x86_64-linux-gnu/libboost_chrono.so /usr/lib/x86_64-linux-gnu/libboost_date_time.so /usr/lib/x86_64-linux-gnu/libboost_atomic.so -lpthread 

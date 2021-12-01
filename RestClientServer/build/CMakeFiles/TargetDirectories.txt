@@ -1,5 +1,0 @@
-/home/dmitriy/DataArt_It_Lead/gitProjects/DataArt_IT_Leaders_project/RestClientServer/build/CMakeFiles/edit_cache.dir
-/home/dmitriy/DataArt_It_Lead/gitProjects/DataArt_IT_Leaders_project/RestClientServer/build/CMakeFiles/package_source.dir
-/home/dmitriy/DataArt_It_Lead/gitProjects/DataArt_IT_Leaders_project/RestClientServer/build/CMakeFiles/rebuild_cache.dir
-/home/dmitriy/DataArt_It_Lead/gitProjects/DataArt_IT_Leaders_project/RestClientServer/build/CMakeFiles/package.dir
-/home/dmitriy/DataArt_It_Lead/gitProjects/DataArt_IT_Leaders_project/RestClientServer/build/CMakeFiles/CliServ.dir

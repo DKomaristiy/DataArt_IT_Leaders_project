@@ -1,5 +1,0 @@
-/home/dmitriy/DataArt_It_Lead/Projects/RestClient/build/CMakeFiles/edit_cache.dir
-/home/dmitriy/DataArt_It_Lead/Projects/RestClient/build/CMakeFiles/package_source.dir
-/home/dmitriy/DataArt_It_Lead/Projects/RestClient/build/CMakeFiles/rebuild_cache.dir
-/home/dmitriy/DataArt_It_Lead/Projects/RestClient/build/CMakeFiles/package.dir
-/home/dmitriy/DataArt_It_Lead/Projects/RestClient/build/CMakeFiles/RestClient.dir
