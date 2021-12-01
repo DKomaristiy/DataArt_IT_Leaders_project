@@ -20,6 +20,7 @@ void make_request(http_client &client, method mtd, json::value const &jvalue)
    uint32_t status = 0;
    int timeout;
 
+  
    while (status != status_codes::OK && (timeout < 25))
    {
       gettimeofday(&tEnd, NULL);
@@ -27,7 +28,7 @@ void make_request(http_client &client, method mtd, json::value const &jvalue)
       timeout = timeend - timebegin;
       try
       {
-         sleep(1);
+        // sleep(1);
          make_task_request(client, mtd, jvalue)
 
              .then([&status](http_response response)
@@ -50,6 +51,7 @@ void make_request(http_client &client, method mtd, json::value const &jvalue)
 }
 
 map<utility::string_t, int> TableOfNumber;
+map<utility::string_t, int> TableOfNumberTemp;
 
 map<utility::string_t, utility::string_t> dictionary;
 
@@ -61,6 +63,26 @@ void display_json(json::value const &jvalue, utility::string_t const &prefix)
    std::cout << prefix << endl;
    std::cout << jvalue.serialize() << endl;
 
+}
+
+void check_change_data()
+{
+   if((TableOfNumberTemp["time"] - TableOfNumber["time"]) > 0)
+   {
+      map<string, int>::iterator it;
+      map<string, int>::iterator it_temp;   
+      it = TableOfNumber.begin();
+
+      for (it_temp = TableOfNumberTemp.begin(); it_temp != TableOfNumberTemp.end(); it_temp++)
+      {
+        if((*it_temp).first == (*it).first)
+          (*it).second  = (*it_temp).second;  
+          else          
+          TableOfNumber[(*it_temp).first] = (*it_temp).second; 
+
+      }
+     
+   }
 }
 
 void RServer::handle_get(http_request request)
@@ -172,7 +194,7 @@ void RServer::handle_put(http_request request)
                            auto key = e.first;
                            auto value = e.second.as_integer();
 
-                           if (TableOfNumber.find(key) == TableOfNumber.end())
+                           if (TableOfNumberTemp.find(key) == TableOfNumberTemp.end())
                            {
                               answer[key] = json::value::string("<put>");
                            }
@@ -181,10 +203,11 @@ void RServer::handle_put(http_request request)
                               answer[key] = json::value::string("<updated>");
                            }
 
-                           TableOfNumber[key] = value;
+                           TableOfNumberTemp[key] = value;
                         }
                      }
                      display_json(jvalue,"Put"); //json_calc(jvalue); display_json
+                     check_change_data();
                   });
 }
 
@@ -283,16 +306,18 @@ vector <http_client> client_http;
 
 void RServer::change_data(json::value jval, vector<string> &TableUrl, uint32_t cnt)
 {
+   std::vector<std::thread> t;
+   struct timeval timeSt;
+   gettimeofday(&timeSt, NULL);  
+   jval["time"] = json::value(timeSt.tv_sec);
+
    for (auto const &e : jval.as_object())
    {
       auto key = e.first;
       auto value = e.second.as_integer();
       TableOfNumber[key] = value;
    }
-
-   web::http::client::http_client_config cfg;
-   cfg.set_timeout(std::chrono::seconds(30));
-   std::vector<std::thread> t;
+     
 
    if (cnt > 0 && (!Fl_client_created))
    {
@@ -301,7 +326,7 @@ void RServer::change_data(json::value jval, vector<string> &TableUrl, uint32_t c
       {
          if (m_listener.uri().to_string() != TableUrl[i])
          {
-            http_client client(U(TableUrl[i]), cfg);
+            http_client client(U(TableUrl[i]));
 
             client_http.push_back(client);
          }

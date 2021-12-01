@@ -37,10 +37,10 @@ void fork_create_server(string url, vector <string> &TableUrl, uint32_t cnt)
 
    std::thread tser(thread_start_server, &server); 
    
-
    auto putvalue = json::value::object();
    putvalue["fork"] = json::value(getpid());
-   server.change_data(putvalue, TableUrl, cnt);
+  // server.change_data(putvalue, TableUrl, cnt);
+   while(1);
    sleep(30);
    server.stopServer();
 
@@ -72,7 +72,7 @@ int main()
    {
       ser[i] = fork();
       switch (ser[i])
-      {
+      { 
       case -1:
          std::cout << "fork error" << endl;
          return -1;
@@ -97,14 +97,29 @@ int main()
             std::thread tser(thread_start_server, &server);
 
             auto putvalue = json::value::object();
-            /* putvalue["one"] = json::value(455);
+            /*       putvalue["one"] = json::value(455);
             putvalue["two"] = json::value(222);
             putvalue["three"] = json::value(333);
             server.change_data(putvalue, TableUrl, cnt);*/
+            struct timeval tBegin, tEnd;
+            gettimeofday(&tBegin, NULL);
+            
+            auto timebegin = tBegin.tv_sec;
+           
 
             putvalue["Street"] = json::value(12);
             putvalue["home"] = json::value(15);
-            server.change_data(putvalue, TableUrl, cnt);
+
+            for (uint32_t i = 0; i < 1000; i++)
+            {
+               server.change_data(putvalue, TableUrl, cnt);
+               putvalue["Street"] = json::value( i);
+               putvalue["home"] = json::value( i);
+            }
+            gettimeofday(&tEnd, NULL);
+            auto timeend = tEnd.tv_sec;
+
+            std::cout << "Time sending = " << (timeend - timebegin) << endl;
 
             for (;;)
             {
